@@ -14,7 +14,7 @@ public class DialActivity extends BluetoothServiceActivity {
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        setContentView(R.layout.layout_activity);
+        setContentView(R.layout.activity_transparent);
     }
 
     @Override

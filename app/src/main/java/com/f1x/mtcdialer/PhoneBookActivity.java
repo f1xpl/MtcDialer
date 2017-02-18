@@ -66,7 +66,6 @@ public abstract class PhoneBookActivity extends BluetoothServiceActivity {
         public void onPhoneBookFetchFinished() {
             this.unregister(PhoneBookActivity.this);
             PhoneBookActivity.this.buildPhoneBook(mRawPhoneBookRecords);
-            PhoneBookActivity.this.onPhoneBookFetchFinished();
 
             try {
                 PhoneBookActivity.this.mBluetoothServiceInterface.setPhoneBookList(mRawPhoneBookRecords);
@@ -75,6 +74,7 @@ public abstract class PhoneBookActivity extends BluetoothServiceActivity {
                 Toast.makeText(PhoneBookActivity.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
 
+            PhoneBookActivity.this.onPhoneBookFetchFinished();
             mRawPhoneBookRecords.clear();
         }
 

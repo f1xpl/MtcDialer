@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  * Created by COMPUTER on 2017-02-18.
  */

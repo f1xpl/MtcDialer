@@ -69,8 +69,8 @@ public class VoiceSelectionCallerActivity extends PhoneBookActivity {
         }
 
         if(phoneNumber != null) {
-            String text = String.format(this.getString(R.string.CallingTo), input);
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+            final String message = String.format(this.getString(R.string.CallingTo), input);
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
             Intent dialIntent = new Intent(this, DialActivity.class);
             dialIntent.setData(Uri.parse("tel:" + phoneNumber));
