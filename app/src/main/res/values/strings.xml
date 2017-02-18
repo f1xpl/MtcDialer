@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">MtcDialer</string>
+    <string name="SpeechPrompt">Say where do you want to call</string>
+    <string name="BluetoothNotAvailable">Bluetooth is not available</string>
+    <string name="SpeechNotRecognized">Speech could not be recognized</string>
+    <string name="PhoneBookEntryNotFound">Could not find phone number for \'%1$s\'</string>
+    <string name="CallingTo">Calling to \'%1$s\'</string>
+    <string name="ConnectingToBluetoothService">Connecting to bluetooth service...</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="SpeechPrompt">Powiedz, gdzie chcesz zadzwonić</string>
+    <string name="BluetoothNotAvailable">Bluetooth jest niedostępny</string>
+    <string name="SpeechNotRecognized">Nie można rozpoznać mowy</string>
+    <string name="PhoneBookEntryNotFound">Wpis o nazwie\'%1$s\' nie został znaleziony w książce telefonicznej</string>
+    <string name="CallingTo">Dzwonię do \'%1$s\'</string>
+    <string name="ConnectingToBluetoothService">Łączę z serwisem bluetooth...</string>
+</resources>
