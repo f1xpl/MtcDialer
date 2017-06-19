@@ -19,12 +19,17 @@ public abstract class BluetoothServiceActivity extends Activity {
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
 
+        // PX3
         Intent startBluetoothServiceIntent = new Intent();
         startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BTSerialService"));
 
         if(!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
-            Toast.makeText(this, this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
-            finish();
+            // PX5
+            startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BlueToothService"));
+            if(!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
+                Toast.makeText(this, this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
+                finish();
+            }
         }
     }
 
