@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.telephony.PhoneNumberUtils;
 import android.widget.Toast;
 
 /**
@@ -37,7 +38,7 @@ public class DialActivity extends BluetoothServiceActivity {
         Uri uri = intent.getData();
 
         if(uri != null && uri.getScheme().matches("tel|sms|smsto|mms|mmsto")) {
-            return uri.getSchemeSpecificPart().replaceAll("\\s+", "");
+            return PhoneNumberUtils.normalizeNumber(uri.getSchemeSpecificPart());
         } else {
             return null;
         }

@@ -5,10 +5,10 @@ android {
     buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "com.f1x.mtcdialer"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
-        versionName "1.1"
+        versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
