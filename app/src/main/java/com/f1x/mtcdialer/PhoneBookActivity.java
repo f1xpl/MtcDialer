@@ -48,7 +48,7 @@ public abstract class PhoneBookActivity extends BluetoothServiceActivity {
     private void buildPhoneBook(List<String> phoneBookRecords) {
         for(String phoneBookRecord : phoneBookRecords) {
             String[] parsedRecord = phoneBookRecord.split("\\^");
-            String contactName = parsedRecord[0].replaceAll("\\s+", " ").replaceAll("\\s+$", "");
+            String contactName = parsedRecord[0].trim().replaceAll(" +", " ");
             String phoneNumber = parsedRecord[1].replaceAll("[^\\d\\+]", "");
 
             mPhoneBookRecords.put(contactName, phoneNumber);
