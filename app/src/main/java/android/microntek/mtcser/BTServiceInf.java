@@ -115,7 +115,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(7, _data, _reply, 0);
+                    this.mRemote.transact(11, _data, _reply, 0);
                     _reply.readException();
                     long _result = _reply.readLong();
                     return _result;
@@ -130,7 +130,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(8, _data, _reply, 0);
+                    this.mRemote.transact(12, _data, _reply, 0);
                     _reply.readException();
                     String _result = _reply.readString();
                     return _result;
@@ -145,7 +145,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(9, _data, _reply, 0);
+                    this.mRemote.transact(15, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -158,7 +158,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(10, _data, _reply, 0);
+                    this.mRemote.transact(16, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -171,7 +171,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(11, _data, _reply, 0);
+                    this.mRemote.transact(17, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -184,7 +184,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(12, _data, _reply, 0);
+                    this.mRemote.transact(18, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -197,7 +197,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(13, _data, _reply, 0);
+                    this.mRemote.transact(19, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -210,7 +210,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(14, _data, _reply, 0);
+                    this.mRemote.transact(20, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -223,7 +223,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(15, _data, _reply, 0);
+                    this.mRemote.transact(21, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -236,7 +236,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(16, _data, _reply, 0);
+                    this.mRemote.transact(26, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -249,7 +249,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(17, _data, _reply, 0);
+                    this.mRemote.transact(27, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -262,7 +262,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(18, _data, _reply, 0);
+                    this.mRemote.transact(28, _data, _reply, 0);
                     _reply.readException();
                     String _result = _reply.readString();
                     return _result;
@@ -277,7 +277,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(19, _data, _reply, 0);
+                    this.mRemote.transact(29, _data, _reply, 0);
                     _reply.readException();
                     String _result = _reply.readString();
                     return _result;
@@ -293,7 +293,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(name);
-                    this.mRemote.transact(20, _data, _reply, 0);
+                    this.mRemote.transact(30, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -307,7 +307,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(password);
-                    this.mRemote.transact(21, _data, _reply, 0);
+                    this.mRemote.transact(31, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -325,7 +325,7 @@ public interface BTServiceInf extends IInterface {
                         i = 1;
                     }
                     _data.writeInt(i);
-                    this.mRemote.transact(22, _data, _reply, 0);
+                    this.mRemote.transact(32, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -339,7 +339,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(23, _data, _reply, 0);
+                    this.mRemote.transact(33, _data, _reply, 0);
                     _reply.readException();
                     if (_reply.readInt() != 0) {
                         _result = true;
@@ -364,7 +364,7 @@ public interface BTServiceInf extends IInterface {
                         i = 1;
                     }
                     _data.writeInt(i);
-                    this.mRemote.transact(24, _data, _reply, 0);
+                    this.mRemote.transact(34, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -378,7 +378,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(25, _data, _reply, 0);
+                    this.mRemote.transact(35, _data, _reply, 0);
                     _reply.readException();
                     if (_reply.readInt() != 0) {
                         _result = true;
@@ -399,7 +399,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(26, _data, _reply, 0);
+                    this.mRemote.transact(36, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -413,7 +413,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(27, _data, _reply, 0);
+                    this.mRemote.transact(37, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -427,7 +427,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(28, _data, _reply, 0);
+                    this.mRemote.transact(38, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -441,7 +441,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(29, _data, _reply, 0);
+                    this.mRemote.transact(39, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -455,7 +455,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(30, _data, _reply, 0);
+                    this.mRemote.transact(40, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -469,7 +469,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(mac);
-                    this.mRemote.transact(31, _data, _reply, 0);
+                    this.mRemote.transact(41, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -482,7 +482,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(32, _data, _reply, 0);
+                    this.mRemote.transact(42, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -495,7 +495,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(33, _data, _reply, 0);
+                    this.mRemote.transact(43, _data, _reply, 0);
                     _reply.readException();
                     List<String> _result = _reply.createStringArrayList();
                     return _result;
@@ -510,7 +510,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(34, _data, _reply, 0);
+                    this.mRemote.transact(44, _data, _reply, 0);
                     _reply.readException();
                     List<String> _result = _reply.createStringArrayList();
                     return _result;
@@ -525,7 +525,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(35, _data, _reply, 0);
+                    this.mRemote.transact(45, _data, _reply, 0);
                     _reply.readException();
                     List<String> _result = _reply.createStringArrayList();
                     return _result;
@@ -540,7 +540,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(36, _data, _reply, 0);
+                    this.mRemote.transact(46, _data, _reply, 0);
                     _reply.readException();
                     List<String> _result = _reply.createStringArrayList();
                     return _result;
@@ -556,7 +556,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeStringList(list);
-                    this.mRemote.transact(37, _data, _reply, 0);
+                    this.mRemote.transact(47, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -570,7 +570,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeInt(idx);
-                    this.mRemote.transact(38, _data, _reply, 0);
+                    this.mRemote.transact(48, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -583,7 +583,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(39, _data, _reply, 0);
+                    this.mRemote.transact(49, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -596,7 +596,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(40, _data, _reply, 0);
+                    this.mRemote.transact(50, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -609,7 +609,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(41, _data, _reply, 0);
+                    this.mRemote.transact(51, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -622,7 +622,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(42, _data, _reply, 0);
+                    this.mRemote.transact(52, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -635,7 +635,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(43, _data, _reply, 0);
+                    this.mRemote.transact(53, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -649,7 +649,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeString(s);
-                    this.mRemote.transact(44, _data, _reply, 0);
+                    this.mRemote.transact(54, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -663,7 +663,7 @@ public interface BTServiceInf extends IInterface {
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
                     _data.writeInt(b);
-                    this.mRemote.transact(45, _data, _reply, 0);
+                    this.mRemote.transact(55, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -676,7 +676,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(46, _data, _reply, 0);
+                    this.mRemote.transact(56, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();
@@ -689,7 +689,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(47, _data, _reply, 0);
+                    this.mRemote.transact(57, _data, _reply, 0);
                     _reply.readException();
                     String _result = _reply.readString();
                     return _result;
@@ -704,7 +704,7 @@ public interface BTServiceInf extends IInterface {
                 Parcel _reply = Parcel.obtain();
                 try {
                     _data.writeInterfaceToken("android.microntek.mtcser.BTServiceInf");
-                    this.mRemote.transact(48, _data, _reply, 0);
+                    this.mRemote.transact(58, _data, _reply, 0);
                     _reply.readException();
                     int _result = _reply.readInt();
                     return _result;
@@ -769,86 +769,86 @@ public interface BTServiceInf extends IInterface {
                     reply.writeNoException();
                     reply.writeString(_result2);
                     return true;
-                case 7:
+                case 11:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     long _result5 = getNowDevAddr();
                     reply.writeNoException();
                     reply.writeLong(_result5);
                     return true;
-                case 8:
+                case 12:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result2 = getNowDevName();
                     reply.writeNoException();
                     reply.writeString(_result2);
                     return true;
-                case 9:
+                case 15:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     avPlayPause();
                     reply.writeNoException();
                     return true;
-                case 10:
+                case 16:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     avPlayStop();
                     reply.writeNoException();
                     return true;
-                case 11:
+                case 17:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     avPlayPrev();
                     reply.writeNoException();
                     return true;
-                case 12:
+                case 18:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     avPlayNext();
                     reply.writeNoException();
                     return true;
-                case 13:
+                case 19:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     answerCall();
                     reply.writeNoException();
                     return true;
-                case 14:
+                case 20:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     hangupCall();
                     reply.writeNoException();
                     return true;
-                case 15:
+                case 21:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     rejectCall();
                     reply.writeNoException();
                     return true;
-                case 16:
+                case 26:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     switchVoice();
                     reply.writeNoException();
                     return true;
-                case 17:
+                case 27:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     syncPhonebook();
                     reply.writeNoException();
                     return true;
-                case 18:
+                case 28:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result2 = getModuleName();
                     reply.writeNoException();
                     reply.writeString(_result2);
                     return true;
-                case 19:
+                case 29:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result2 = getModulePassword();
                     reply.writeNoException();
                     reply.writeString(_result2);
                     return true;
-                case 20:
+                case 30:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     setModuleName(data.readString());
                     reply.writeNoException();
                     return true;
-                case 21:
+                case 31:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     setModulePassword(data.readString());
                     reply.writeNoException();
                     return true;
-                case 22:
+                case 32:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     if (data.readInt() != 0) {
                         _arg02 = true;
@@ -856,7 +856,7 @@ public interface BTServiceInf extends IInterface {
                     setAutoConnect(_arg02);
                     reply.writeNoException();
                     return true;
-                case 23:
+                case 33:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result3 = getAutoConnect();
                     reply.writeNoException();
@@ -865,7 +865,7 @@ public interface BTServiceInf extends IInterface {
                     }
                     reply.writeInt(_arg0);
                     return true;
-                case 24:
+                case 34:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     if (data.readInt() != 0) {
                         _arg02 = true;
@@ -873,7 +873,7 @@ public interface BTServiceInf extends IInterface {
                     setAutoAnswer(_arg02);
                     reply.writeNoException();
                     return true;
-                case 25:
+                case 35:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result3 = getAutoAnswer();
                     reply.writeNoException();
@@ -882,122 +882,122 @@ public interface BTServiceInf extends IInterface {
                     }
                     reply.writeInt(_arg0);
                     return true;
-                case 26:
+                case 36:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     connectBT(data.readString());
                     reply.writeNoException();
                     return true;
-                case 27:
+                case 37:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     disconnectBT(data.readString());
                     reply.writeNoException();
                     return true;
-                case 28:
+                case 38:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     connectOBD(data.readString());
                     reply.writeNoException();
                     return true;
-                case 29:
+                case 39:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     disconnectOBD(data.readString());
                     reply.writeNoException();
                     return true;
-                case 30:
+                case 40:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     deleteOBD(data.readString());
                     reply.writeNoException();
                     return true;
-                case 31:
+                case 41:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     deleteBT(data.readString());
                     reply.writeNoException();
                     return true;
-                case 32:
+                case 42:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     syncMatchList();
                     reply.writeNoException();
                     return true;
-                case 33:
+                case 43:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result4 = getMatchList();
                     reply.writeNoException();
                     reply.writeStringList(_result4);
                     return true;
-                case 34:
+                case 44:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result4 = getDeviceList();
                     reply.writeNoException();
                     reply.writeStringList(_result4);
                     return true;
-                case 35:
+                case 45:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result4 = getHistoryList();
                     reply.writeNoException();
                     reply.writeStringList(_result4);
                     return true;
-                case 36:
+                case 46:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result4 = getPhoneBookList();
                     reply.writeNoException();
                     reply.writeStringList(_result4);
                     return true;
-                case 37:
+                case 47:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     setPhoneBookList(data.createStringArrayList());
                     reply.writeNoException();
                     return true;
-                case 38:
+                case 48:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     deleteHistory(data.readInt());
                     reply.writeNoException();
                     return true;
-                case 39:
+                case 49:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     deleteHistoryAll();
                     reply.writeNoException();
                     return true;
-                case 40:
+                case 50:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     musicMute();
                     reply.writeNoException();
                     return true;
-                case 41:
+                case 51:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     musicUnmute();
                     reply.writeNoException();
                     return true;
-                case 42:
+                case 52:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     scanStart();
                     reply.writeNoException();
                     return true;
-                case 43:
+                case 53:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     scanStop();
                     reply.writeNoException();
                     return true;
-                case 44:
+                case 54:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     dialOut(data.readString());
                     reply.writeNoException();
                     return true;
-                case 45:
+                case 55:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     dialOutSub((char) data.readInt());
                     reply.writeNoException();
                     return true;
-                case 46:
+                case 56:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     reDial();
                     reply.writeNoException();
                     return true;
-                case 47:
+                case 57:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     _result2 = getMusicInfo();
                     reply.writeNoException();
                     reply.writeString(_result2);
                     return true;
-                case 48:
+                case 58:
                     data.enforceInterface("android.microntek.mtcser.BTServiceInf");
                     int _result6 = getOBDstate();
                     reply.writeNoException();
