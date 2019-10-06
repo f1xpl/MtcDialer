@@ -41,7 +41,7 @@ jobs:
            pE8fHWykOmDOiUCHy5VhGp0oP09cjPMRZvQIZSqR53kjNHsQjJLXXWdHViS+OecGuU1NafND8A6VavkRWUeTDYp3E3p1X33wkwJGtAk="
         file_glob: true
         file:
-         - 'app/build/outputs/apk/release/*.aar'
+          - 'app/build/outputs/apk/release/*.apk'
         skip_cleanup: true
         on:
           branch: master
