@@ -1,8 +1,19 @@
 apply plugin: 'com.android.application'
 
+Properties localProps = getSigningProperties()
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
+    signingConfigs {
+        release {
+            storeFile file(localProps.getProperty('RELEASE_KEYSTORE_PATH','fillhere'))
+            storePassword localProps.getProperty('RELEASE_KEYSTORE_PW','')
+            keyAlias localProps.getProperty('RELEASE_KEY_ALIAS','')
+            keyPassword localProps.getProperty('RELEASE_KEY_PW','')
+        }
+    }
 
     defaultConfig {
         applicationId "at.favre.mtcdialer"
@@ -15,10 +26,18 @@ android {
         archivesBaseName = "$applicationId-$versionName"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

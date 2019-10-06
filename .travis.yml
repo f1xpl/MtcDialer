@@ -25,7 +25,7 @@ jobs:
   - stage: buildDefault
     if: (type IN (push))
     before_install:
-      - openssl aes-256-cbc -K $encrypted_0a50a6dc4585_key -iv $encrypted_0a50a6dc4585_iv -in credentials.tar.enc -out credentials.tar -d
+      - openssl aes-256-cbc -K $encrypted_ff9a2399977b_key -iv $encrypted_ff9a2399977b_iv -in credentials.tar.enc -out credentials.tar -d
       - tar xvf credentials.tar
       - mkdir "$ANDROID_HOME/licenses" || true
       - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
@@ -35,7 +35,10 @@ jobs:
     deploy:
       - provider: releases
         api_key:
-           secure: "lwb8DJFAgSZzlrQ+NjsLSQqMju9vt/k63DQ24GW5lPTi5ZUcharrf+VexZmnxkYlIrrfYCpimqXw6GeSpi3hsys5pTT+0J53FjGvraT8g4X21teLhWlVLBeh5pIVw3VGWOcut/nJRcD4POnXTJV6kK/78qvUpddzrqYz72S9jGRt0kxDCxjYfcYBcx1OiFogy++nA9CTkMJkUsFC3asWwBSiZK2rc3TG5NIdrrlT6F0fOWELYxc1HT3W2P1tGi2f/V4G0XRop2Qe+zWNdlggkkQzw2slKrWbmf+nPK/TMCJLgXw2Uaru+P/SHW3Amg+thAibSJQFPQ1oJmUU7MuuCBAeu+Wyv//S35BjKhmQ94C0e8bSCJajGzR6/LjtOGVsAaJWLhq0F5k7v/UeGFb8fYDFDlbelzcQf2Df0ujBagDIadFzf+MQFnoG/B94lkPA/PSa9DFqZEPf4z1uTIRL0HL5ALFxRxpCyKaydmBvV4I9hHFZ2but1Pzx07ziP0JbQK7U1XdmPUHSePe/iLKz1NaXSwAChtwqsKTzww7vOCdlgjlU4x7uphu7HWk1m35hxBR5l7wPSp+jSw7gsmXmQlqPBJeNgGzGfBmH849dcV+PeVwYHiDsNzyqaeNCEir8UQBEe2ufTB+Irt+QvNswb35VHwXz2IhcrhRUzRdEs8Y="
+          secure: "SmQRgiyIuHV4CX0kPdFq0pvAo5fKELb3nloPfbSW1T2i4okntfM0Mx5XGwpS+QTkZRl4ZeiyLynPMI6JAQ2fDvtqzaEZsOyudiYNS2uVc8JCs8hCg+fBC/5ZNaG2hHUNGhczj0/Tn/m+52DSzz/DsGZLIWkFpaNw7VuzkHVAajH1RpZ22TswCReUUK
+           Pi2JJ/AiBcOQXVOc8afBVI+ciR5FytElNVmL/Kee11KFVh8/OKOgsXRwIZpkxu9WGkpFyZR3+E2lSJmBO/Tm4vNMEjNJIQKBRoujVR5exnJxYXQTcy1uMT0hkGI55gQfMOdGn1VavoImih9A8/QfR9Oxiwm/DWYXAwIozCNlqi6Ebzx5MkRuEEEyqB91Xhj37WsnA
+           P3YEwBupuxrySLdXp8nLqaU44389N/GeVn8hf8tTpERBPygGAvWmFg/Dtj01J9AokpcJm1f2jd+1II81uo0h3thS5UWCkoNb46Z5qW02chVvYnEnwr+n/wZxz1Xem0gLwV8SBIVxmFiPUzM2aAkWPhULqFkefWwTqDTL3rsQWl4Z41mnoQKK2B1qMsRq938hCIqDQ
+           pE8fHWykOmDOiUCHy5VhGp0oP09cjPMRZvQIZSqR53kjNHsQjJLXXWdHViS+OecGuU1NafND8A6VavkRWUeTDYp3E3p1X33wkwJGtAk="
         file_glob: true
         file:
          - 'app/build/outputs/apk/release/*.aar'
@@ -55,5 +58,8 @@ cache:
 
 notifications:
   slack:
-    secure: "hmLLayT00t5WlI2lm5L9oofsmcQCa4+XSPDRjLhp0wEnqc+yGoU+luEugCxCJntNac38Qz823Qhep0PzGsLzrfL+FQa4t7bRqGIX0FtpYEfYucVQrcqj11N4WMYZHr39ZkglFlfsw/xNhI4N3jXL8/MH5+4HuWD1egyXwpNpTdNOx+rDeX5Wcwx/VTs1PwpAZCMt0Xqm9t4CBWOiPTE+3oVD5wjL6n+Tu1NeeD3+RPliAFOLLqrLmph/50TMoAea1/sLwCwXE9Mvep7CGYbEf3VY16T6p1o/jfnGPajsolHgYC3zj9urGnBbdqFuvpsaW3p61roBgj+53tiu5mH9S45dG+z+v0XKXp3NJdFAgkO3RrcQbq+XDwZeuov5vjnc32aikzHugJGKqbohfj4HTUySKunwpESzpDCFY8nP+mgiVWWH4y0IBkm1wYOwniCPlJ43uFZGFO+1hbbd3MDafIJlKm3BlKX50t594rox5PHD5vO72UusE3+saIPB9OHKVpw3bcL0TtU8oaqd0D8Rczv0NHsdAmimnhVnmUPUK9CPqGhSn0CmDXEvWj41Nhh5BBHN0nYn6M/nOEcM/0mul5fw0zCGhOjfkID6+rs9oQaqxy14fymJdHQcZo/4wU+o5lXrg5EmBgmA9dk2APIqV1q9FwgqBLcJnzHD61RiECc="
+    secure: "RYZvoEgWQNu5fJdLoNcBJ/htE0/aYi6ORLdih25g4R8EUHYhucFRMu1K0VEyxWErCSei4anyq5mxlnOjL/SIhNo3HrS/Jzu0uirj2jWsAYtzOfxtrfzsY3S6f0CFjS2f3bbbgXwAu+3NVLMYkMB7HigB7pCDP2Cs+7B9Z37NUuMsf063BUFtOQklzH
+    vRQDOULhN+yMmOFhP9Ivd4NtXnQySFHfu593CP7w3trzfH9zGy+7pYc3NV0xoX+jwy62s6E71MH3wOQBrZxLfdCtOsKWbS2kYT7M8kqEoqK6P1yCp0ZeexN3NZbIuGNISTjcaOR31lZLVZP6a/04xwO9/NNXVTeiq193xfRHxJrz0n8bC6rXzYlvALWwQYUxOzPgy
+    AEc8vbYKSGGPWOU86/T36/UXgOG+aCg/VAt/+ftZqVH4eB7yuM9NMICOHvTCMWm4IcHb41DQLwG6FfdcgOLW8m/YWuFSdWTbJJuCzPzzkCaVpYxEg3M1qfrWauoHgkUlyMESEf2dHU9BlvegPuJAFC/6TI8b63WDr87/4DvMZnK4GWtEqpfo7+EJ8fTQg95QMB8ku
+    qyJSVCn8MOINK/736qF2xrh31FDyK1ulp7wxwkoXQlg4vHTAQLiRfqObdTDUBjOkxpDPj1Fuh0b55w3rJ+b1f+UJqDpkvjuLJwFBZLg="
   email: false
