@@ -2,6 +2,9 @@
 
 Make hands-free phone calls on MTCD (Microntek) head unit.
 
+[![GitHub release](https://img.shields.io/github/release/patrickfav/MtcDialer.svg)](https://github.com/patrickfav/MtcDialer/releases/latest)
+[![Build Status](https://travis-ci.org/patrickfav/MtcDialer.svg?branch=master)](https://travis-ci.org/patrickfav/MtcDialer)
+
 ## Preconditions
 
 * Google Services needs to be updated and active (it is recommended to use the newest version from Play Store)
