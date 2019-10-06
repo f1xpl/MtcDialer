@@ -37,7 +37,7 @@ public class DialActivity extends BluetoothServiceActivity {
     String extractPhoneNumber(Intent intent) {
         Uri uri = intent.getData();
 
-        if(uri != null && uri.getScheme().matches("tel|sms|smsto|mms|mmsto")) {
+        if (uri != null && uri.getScheme() != null && uri.getScheme().matches("tel|sms|smsto|mms|mmsto")) {
             return PhoneNumberUtils.normalizeNumber(uri.getSchemeSpecificPart());
         } else {
             return null;

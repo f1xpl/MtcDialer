@@ -15,37 +15,11 @@ import android.widget.Toast;
  */
 
 public abstract class BluetoothServiceActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstance) {
-        super.onCreate(savedInstance);
-
-        // PX3
-        Intent startBluetoothServiceIntent = new Intent();
-        startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BTSerialService"));
-
-        if(!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
-            // PX5
-            startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BlueToothService"));
-            if(!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
-                Toast.makeText(this, this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
-                finish();
-            }
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unbindService(mServiceConnection);
-    }
-
-    protected abstract void onServiceConnected();
-    protected abstract void onServiceDisconnected();
-
+    protected BTServiceInf mBluetoothServiceInterface;
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            if(iBinder == null) {
+            if (iBinder == null) {
                 Toast.makeText(BluetoothServiceActivity.this, BluetoothServiceActivity.this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
                 BluetoothServiceActivity.this.finish();
                 return;
@@ -53,7 +27,7 @@ public abstract class BluetoothServiceActivity extends Activity {
 
             mBluetoothServiceInterface = BTServiceInf.Stub.asInterface(iBinder);
 
-            if(mBluetoothServiceInterface == null) {
+            if (mBluetoothServiceInterface == null) {
                 Toast.makeText(BluetoothServiceActivity.this, BluetoothServiceActivity.this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
                 BluetoothServiceActivity.this.finish();
                 return;
@@ -76,5 +50,31 @@ public abstract class BluetoothServiceActivity extends Activity {
         }
     };
 
-    protected BTServiceInf mBluetoothServiceInterface;
+    @Override
+    protected void onCreate(Bundle savedInstance) {
+        super.onCreate(savedInstance);
+
+        // PX3
+        Intent startBluetoothServiceIntent = new Intent();
+        startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BTSerialService"));
+
+        if (!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
+            // PX5
+            startBluetoothServiceIntent.setComponent(new ComponentName("android.microntek.mtcser", "android.microntek.mtcser.BlueToothService"));
+            if (!bindService(startBluetoothServiceIntent, mServiceConnection, BIND_AUTO_CREATE)) {
+                Toast.makeText(this, this.getText(R.string.BluetoothNotAvailable), Toast.LENGTH_LONG).show();
+                finish();
+            }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(mServiceConnection);
+    }
+
+    protected abstract void onServiceConnected();
+
+    protected abstract void onServiceDisconnected();
 }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.telephony.PhoneNumberUtils;
 import android.widget.Toast;
 
 import java.util.List;
@@ -22,15 +21,16 @@ public class VoiceSelectionCallerActivity extends PhoneBookActivity {
     }
 
     @Override
-    protected void onServiceDisconnected() {}
-
-    @Override
-    protected  void onPhoneBookFetchFinished() {
+    protected void onPhoneBookFetchFinished() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toString());
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, this.getText(R.string.SpeechPrompt));
 
         startActivityForResult(intent, 1);
+    }
+
+    @Override
+    protected void onServiceDisconnected() {
     }
 
     @Override
@@ -42,7 +42,7 @@ public class VoiceSelectionCallerActivity extends PhoneBookActivity {
         }
 
         List<String> texts = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-        if (texts.isEmpty()) {
+        if (texts != null && texts.isEmpty()) {
             Toast.makeText(this, this.getText(R.string.SpeechNotRecognized), Toast.LENGTH_LONG).show();
             VoiceSelectionCallerActivity.this.finish();
             return;
@@ -68,7 +68,7 @@ public class VoiceSelectionCallerActivity extends PhoneBookActivity {
             phoneNumber = input;
         }
 
-        if(phoneNumber != null) {
+        if (phoneNumber != null) {
             final String message = String.format(this.getString(R.string.CallingTo), input);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
