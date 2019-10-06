@@ -1,0 +1,10 @@
+# Releases
+
+## v1.3.0
+* update to SDK 29
+* update launcher icon
+* update application id to `at.favre.mtcdialer`
+* add CI build
+
+## v1.2.2
+ * initial release (fork version) -> https://github.com/f1xpl/MtcDialer/releases
