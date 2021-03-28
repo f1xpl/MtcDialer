@@ -14,50 +14,10 @@ import java.util.TreeMap;
  */
 
 public abstract class PhoneBookActivity extends BluetoothServiceActivity {
-    @Override
-    protected void onCreate(Bundle savedInstance) {
-        super.onCreate(savedInstance);
-        mPhoneBookRecords = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mPhoneBookReceiver.unregister(this);
-    }
-
-    @Override
-    protected void onServiceConnected() {
-        try {
-            List<String> phoneBookRecords = mBluetoothServiceInterface.getPhoneBookList();
-
-            if(!phoneBookRecords.isEmpty()) {
-                buildPhoneBook(phoneBookRecords);
-                onPhoneBookFetchFinished();
-            } else {
-                mPhoneBookReceiver.register(this);
-                mBluetoothServiceInterface.syncPhonebook();
-            }
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            Toast.makeText(PhoneBookActivity.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-            finish();
-        }
-    }
-
-    private void buildPhoneBook(List<String> phoneBookRecords) {
-        for(String phoneBookRecord : phoneBookRecords) {
-            String[] parsedRecord = phoneBookRecord.split("\\^");
-            String contactName = parsedRecord[0].trim().replaceAll(" +", " ");
-            String phoneNumber = parsedRecord[1].replaceAll("[^\\d\\+]", "");
-
-            mPhoneBookRecords.put(contactName, phoneNumber);
-        }
-    }
-
-    protected abstract void onPhoneBookFetchFinished();
-
+    protected Map<String, String> mPhoneBookRecords;
     private final PhoneBookReceiver mPhoneBookReceiver = new PhoneBookReceiver() {
+        List<String> mRawPhoneBookRecords = new ArrayList<>();
+
         @Override
         public void onPhoneBookRecordFetched(String record) {
             mRawPhoneBookRecords.add(record);
@@ -78,9 +38,48 @@ public abstract class PhoneBookActivity extends BluetoothServiceActivity {
             PhoneBookActivity.this.onPhoneBookFetchFinished();
             mRawPhoneBookRecords.clear();
         }
-
-        List<String> mRawPhoneBookRecords = new ArrayList<>();
     };
 
-    protected Map<String, String> mPhoneBookRecords;
+    @Override
+    protected void onCreate(Bundle savedInstance) {
+        super.onCreate(savedInstance);
+        mPhoneBookRecords = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPhoneBookReceiver.unregister(this);
+    }
+
+    @Override
+    protected void onServiceConnected() {
+        try {
+            List<String> phoneBookRecords = mBluetoothServiceInterface.getPhoneBookList();
+
+            if (!phoneBookRecords.isEmpty()) {
+                buildPhoneBook(phoneBookRecords);
+                onPhoneBookFetchFinished();
+            } else {
+                mPhoneBookReceiver.register(this);
+                mBluetoothServiceInterface.syncPhonebook();
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            Toast.makeText(PhoneBookActivity.this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
+
+    private void buildPhoneBook(List<String> phoneBookRecords) {
+        for (String phoneBookRecord : phoneBookRecords) {
+            String[] parsedRecord = phoneBookRecord.split("\\^");
+            String contactName = parsedRecord[0].trim().replaceAll(" +", " ");
+            String phoneNumber = parsedRecord[1].replaceAll("[^\\d\\+]", "");
+
+            mPhoneBookRecords.put(contactName, phoneNumber);
+        }
+    }
+
+    protected abstract void onPhoneBookFetchFinished();
 }

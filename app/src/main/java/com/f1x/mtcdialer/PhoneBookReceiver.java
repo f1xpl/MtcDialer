@@ -10,6 +10,11 @@ import android.content.IntentFilter;
  */
 
 public abstract class PhoneBookReceiver extends BroadcastReceiver {
+    private final String BLUETOOTH_REPORT_ACTION = "com.microntek.bt.report";
+    private final String PHONEBOOK_RECORD_EXTRA = "phonebook_record";
+    private final String PHONEBOOK_SYNC_END_EXTRA = "phonebook_end";
+    private boolean mRegistered;
+
     public PhoneBookReceiver() {
         mRegistered = false;
     }
@@ -25,8 +30,12 @@ public abstract class PhoneBookReceiver extends BroadcastReceiver {
         }
     }
 
+    public abstract void onPhoneBookRecordFetched(String record);
+
+    public abstract void onPhoneBookFetchFinished();
+
     public void register(Context context) {
-        if(!mRegistered) {
+        if (!mRegistered) {
             mRegistered = true;
 
             IntentFilter intentFilter = new IntentFilter();
@@ -37,18 +46,9 @@ public abstract class PhoneBookReceiver extends BroadcastReceiver {
     }
 
     public void unregister(Context context) {
-        if(mRegistered) {
+        if (mRegistered) {
             mRegistered = false;
             context.unregisterReceiver(this);
         }
     }
-
-    public abstract void onPhoneBookRecordFetched(String record);
-    public abstract void onPhoneBookFetchFinished();
-
-    private boolean mRegistered;
-
-    private final String BLUETOOTH_REPORT_ACTION = "com.microntek.bt.report";
-    private final String PHONEBOOK_RECORD_EXTRA = "phonebook_record";
-    private final String PHONEBOOK_SYNC_END_EXTRA = "phonebook_end";
 }

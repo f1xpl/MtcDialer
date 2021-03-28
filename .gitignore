@@ -41,3 +41,6 @@ captures/
 *.jks
 
 .DS_Store
+
+signing.properties
+credentials.tar
